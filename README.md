@@ -168,7 +168,25 @@ git commit -m "Update website"
 git push
 ```
 
-### 2. Create a Portainer Stack from Git
+### 2. GitHub Actions builds and publishes the image
+
+A workflow at [.github/workflows/docker-publish.yml](.github/workflows/docker-publish.yml) builds the Dockerfile and pushes the image to GitHub Container Registry (GHCR) on every push to `main`, tagged as:
+
+```text
+ghcr.io/fuegovic/mcssherbrooke:latest
+```
+
+No local Docker build is needed — GitHub does it for you. Check the **Actions** tab of the repository to confirm the build succeeded.
+
+The package is private by default. Make it public (or add registry credentials in Portainer) so the home server can pull it:
+
+1. On GitHub, open your profile **Packages** tab.
+2. Select `mcssherbrooke`.
+3. Open **Package settings** and change visibility to **Public**.
+
+### 3. Create a Portainer Stack from Git
+
+`docker-compose.yml` now references the published image instead of building locally:
 
 In Portainer on the home server:
 
@@ -180,9 +198,9 @@ In Portainer on the home server:
 6. Set the Compose path to `docker-compose.yml`.
 7. Deploy the stack.
 
-Portainer will read `docker-compose.yml`, build the included `Dockerfile`, and run the site on port `8085`.
+Portainer pulls `ghcr.io/fuegovic/mcssherbrooke:latest` and runs it on port `8085`.
 
-### 3. Point Cloudflare Tunnel to Portainer
+### 4. Point Cloudflare Tunnel to Portainer
 
 Keep the Cloudflare Published application route set to:
 
@@ -197,9 +215,9 @@ If `cloudflared` is running in Docker, use a shared Docker network and point it 
 http://my-canadian-stock:80
 ```
 
-### 4. Update from GitHub
+### 5. Update from GitHub
 
-After pushing a change to GitHub, open the Portainer stack and choose **Pull and redeploy** or **Update the stack**, depending on your Portainer version. Enable **Re-pull image and redeploy** if shown. Portainer will pull the latest files, rebuild the image, and replace the running container while keeping the same port and Cloudflare route.
+After pushing a change, GitHub Actions rebuilds and republishes the image automatically. Once the workflow finishes, open the Portainer stack and choose **Pull and redeploy** (enable **Re-pull image**). Portainer will pull the newly published image and replace the running container while keeping the same port and Cloudflare route.
 
 ## Contributing
 
