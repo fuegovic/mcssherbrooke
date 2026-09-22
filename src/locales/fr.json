@@ -1,0 +1,83 @@
+{
+  "storeName": "Mon Stock Canadien - Sherbrooke",
+  "ui": {
+    "nav.discover": "Découvrir",
+    "nav.hours": "Heures",
+    "nav.contact": "Contact",
+    "nav.location": "Emplacement",
+    "hero.eyebrow": "Bienvenue chez",
+    "hero.description": "De bons produits, de bonnes aubaines, directement à Sherbrooke.",
+    "hero.button": "Nous visiter",
+    "about.eyebrow": "Découvrez le magasin",
+    "about.title": "Une chasse aux trésors à chaque visite",
+    "about.intro": "My Canadian Stock est une entreprise locale située au centre-ville de Sherbrooke, spécialisée dans la liquidation de marchandises provenant d'Amazon, Walmart, Costco, Canadian Tire et d'autres grands détaillants.",
+    "about.notice": "L'inventaire et les prix changent rapidement. Les articles et les quantités sont limités, alors chaque visite peut révéler une nouvelle trouvaille.",
+    "hours.eyebrow": "Planifiez votre visite",
+    "hours.title": "Heures d'ouverture",
+    "hours.subtitle": "Au plaisir de vous accueillir.",
+    "contact.eyebrow": "Communiquez avec nous",
+    "contact.title": "Contactez-nous",
+    "contact.description": "Une question? Nous sommes là pour vous aider.",
+    "location.eyebrow": "Venez nous voir",
+    "location.title": "Nous trouver"
+  },
+  "about": {
+    "cards": [
+      {
+        "title": "De nouveaux arrivages chaque semaine",
+        "body": "Notre inventaire change constamment : électroménagers, accessoires, jouets, articles de maison, outils, produits saisonniers et plus encore. Vous trouverez des produits neufs, ouverts ou retournés provenant de surplus, livraisons refusées, fermetures de magasins et liquidations de fin de saison."
+      },
+      {
+        "title": "Une zone de test en magasin",
+        "body": "Vous voulez vérifier un article avant de l'acheter? Ouvrez la boîte, vérifiez son contenu et testez le produit lorsque c'est possible. Nous vous encourageons à vous assurer que les pièces principales et les accessoires sont présents avant de passer à la caisse."
+      },
+      {
+        "title": "Une vraie chasse aux trésors",
+        "body": "Tout fonctionne selon le principe du premier arrivé, premier servi. Les produits sont uniques, les quantités limitées et les meilleures trouvailles disparaissent vite. Chaque visite est différente."
+      },
+      {
+        "title": "Une nouvelle vague chaque samedi",
+        "body": "Le nouvel inventaire de la semaine est mis en rayon chaque samedi. C'est le moment où arrivent les articles les plus intéressants, rares ou coûteux, alors les prix sont à leur niveau le plus élevé."
+      },
+      {
+        "title": "Des prix qui baissent toute la semaine",
+        "body": "Les prix diminuent progressivement selon l'inventaire restant. La plage habituelle va de 25 $ le samedi jusqu'à aussi peu que 1 $ le vendredi, selon la quantité, la qualité et la demande. Les articles plus dispendieux sont différents : leur prix est généralement fixe, à environ 50 % de rabais sur le prix régulier en magasin."
+      },
+      {
+        "title": "Notre politique de retour",
+        "body": "Inspectez et testez votre achat avant de quitter. Pour les articles de plus de 5 $, les défectuosités ou pièces manquantes peuvent être signalées dans les 24 heures, soit jusqu'à la fermeture du lendemain. Nous offrons un échange ou un crédit en magasin, sans remboursement en argent. Les changements d'idée ne sont pas acceptés; les vêtements et chaussures sont des ventes finales."
+      },
+      {
+        "title": "Pourquoi les clients reviennent",
+        "body": "",
+        "items": ["Des prix qui baissent chaque jour", "Un inventaire qui change constamment", "Des produits de grandes marques et détaillants", "Une zone de test avant l'achat", "Une expérience amusante et imprévisible", "Une entreprise locale qui fait vivre le centre-ville de Sherbrooke"]
+      }
+    ]
+  },
+  "schedule": {
+    "monday": "11 h 00 - 18 h 00",
+    "tuesday": "11 h 00 - 18 h 00",
+    "wednesday": "11 h 00 - 18 h 00",
+    "thursday": "11 h 00 - 19 h 00",
+    "friday": "11 h 00 - 19 h 00",
+    "saturday": "11 h 00 - 19 h 00",
+    "sunday": "11 h 00 - 18 h 00"
+  },
+  "address": {
+    "street": "103 Wellington N.",
+    "city": "Sherbrooke",
+    "province": "Québec",
+    "postalCode": "J1H 5B9"
+  },
+  "contact": {
+    "phone": "(819) 562-1516"
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/mcs.sherbrooke/",
+    "facebook": "https://www.facebook.com/mcs.sherbrooke/"
+  },
+  "map": {
+    "latitude": 45.4048,
+    "longitude": -71.8921
+  }
+}

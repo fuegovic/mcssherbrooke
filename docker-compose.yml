@@ -1,0 +1,10 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-canadian-stock:latest
+    container_name: my-canadian-stock
+    restart: unless-stopped
+    ports:
+      - "8085:80"

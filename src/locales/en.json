@@ -1,0 +1,84 @@
+{
+  "storeName": "My Canadian Stock - Sherbrooke",
+  "ui": {
+    "nav.discover": "Discover",
+    "nav.hours": "Hours",
+    "nav.contact": "Contact",
+    "nav.location": "Location",
+    "hero.eyebrow": "Welcome to",
+    "hero.description": "Great products, great value, right here in Sherbrooke.",
+    "hero.button": "Visit us",
+    "about.eyebrow": "Discover the store",
+    "about.title": "A treasure hunt, every visit",
+    "about.intro": "My Canadian Stock is a local business in downtown Sherbrooke, specializing in liquidation merchandise from Amazon, Walmart, Costco, Canadian Tire, and other major retailers.",
+    "about.notice": "Inventory and prices change quickly. Items and quantities are limited, so each visit can bring a different find.",
+    "hours.eyebrow": "Plan your visit",
+    "hours.title": "Store hours",
+    "hours.subtitle": "We look forward to welcoming you.",
+    "contact.eyebrow": "Get in touch",
+    "contact.title": "Contact us",
+    "contact.description": "Have a question? We would be happy to help.",
+    "location.eyebrow": "Come see us",
+    "location.title": "Find us"
+  },
+  "about": {
+    "cards": [
+      {
+        "title": "New arrivals every week",
+        "body": "Our inventory changes constantly: appliances, accessories, toys, home goods, tools, seasonal products, and more. You may find new, open-box, or customer-returned items from surplus inventory, refused deliveries, store closures, and end-of-season clearances."
+      },
+      {
+        "title": "A testing area in store",
+        "body": "Want to check an item before buying? Open the box, inspect the contents, and test the product when possible. We encourage you to make sure the main parts and accessories are included before checkout."
+      },
+      {
+        "title": "A real treasure hunt",
+        "body": "Everything is first come, first served. Products are unique, quantities are limited, and the best finds go quickly. Every visit brings something different."
+      },
+      {
+        "title": "Fresh stock every Saturday",
+        "body": "New weekly inventory goes on the shelves every Saturday. This is when the most interesting, rare, or valuable items arrive, so prices are at their highest."
+      },
+      {
+        "title": "Prices drop all week",
+        "body": "Prices gradually decrease based on what remains. The usual range is $25 on Saturday down to as little as $1 on Friday, adjusted according to quantity, quality, and demand. Higher-priced items are different: their price is generally fixed at about 50% off the regular in-store price."
+      },
+      {
+        "title": "Our return policy",
+        "body": "Please inspect and test your purchase before leaving. For items over $5, product defects or missing parts can be reported within 24 hours, until closing the following day. We offer an exchange or store credit, not cash refunds. Change-of-mind returns are not accepted; clothing and shoes are final sale."
+      },
+      {
+        "title": "Why customers come back",
+        "body": "",
+        "items": ["Prices drop every day", "Inventory changes constantly", "Products from major brands and retailers", "A testing area before purchase", "A fun and unpredictable shopping experience", "A local business supporting downtown Sherbrooke"]
+      }
+    ]
+  },
+  "schedule": {
+    "monday": "11:00 AM - 6:00 PM",
+    "tuesday": "11:00 AM - 6:00 PM",
+    "wednesday": "11:00 AM - 6:00 PM",
+    "thursday": "11:00 AM - 7:00 PM",
+    "friday": "11:00 AM - 7:00 PM",
+    "saturday": "11:00 AM - 7:00 PM",
+    "sunday": "11:00 AM - 6:00 PM"
+  },
+  "address": {
+    "street": "103 Wellington N.",
+    "city": "Sherbrooke",
+    "province": "QC",
+    "postalCode": "J1H 5B9",
+    "country": "Canada"
+  },
+  "contact": {
+    "phone": "(819) 562-1516"
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/mcs.sherbrooke/",
+    "facebook": "https://www.facebook.com/mcs.sherbrooke/"
+  },
+  "map": {
+    "latitude": 45.4048,
+    "longitude": -71.8921
+  }
+}

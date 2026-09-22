@@ -1,0 +1,26 @@
+{
+  "name": "my-canadian-stock-sherbrooke",
+  "version": "1.0.0",
+  "description": "A retail store website for My Canadian Stock located in Sherbrooke, offering bilingual support and essential information.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "retail",
+    "bilingual",
+    "store",
+    "Sherbrooke"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
+}

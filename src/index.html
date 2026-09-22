@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Canadian Stock - Sherbrooke retail store information." />
+    <link rel="icon" type="image/jpeg" href="assets/mcs.jpg" />
+    <title>My Canadian Stock - Sherbrooke</title>
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="My Canadian Stock - Sherbrooke home">
+            <img class="brand-logo" src="assets/mcs.jpg" alt="My Canadian Stock shopping cart logo" />
+            <span class="brand-name">My<br />Canadian<br /><b>Stock</b><small>Sherbrooke</small></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="#about" data-i18n="nav.discover">Discover</a>
+            <a href="#hours" data-i18n="nav.hours">Hours</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+            <a href="#location" data-i18n="nav.location">Location</a>
+        </nav>
+        <button id="language-switcher" class="language-switcher" type="button" aria-label="Change language">FR</button>
+        <button id="theme-switcher" class="theme-switcher" type="button" aria-label="Switch to dark mode">☾</button>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow" data-i18n="hero.eyebrow">Welcome to</p>
+                <h1>My Canadian Stock<br /><span>Sherbrooke</span></h1>
+                <p class="hero-text" data-i18n="hero.description">Great products, great value, right here in Sherbrooke.</p>
+                <a class="button" href="#location" data-i18n="hero.button">Visit us</a>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="about-heading">
+                <p class="eyebrow" data-i18n="about.eyebrow">Discover the store</p>
+                <h2 data-i18n="about.title">A treasure hunt, every visit</h2>
+                <p class="muted" data-i18n="about.intro"></p>
+                <p class="notice" data-i18n="about.notice"></p>
+            </div>
+            <div id="about-content" class="about-grid"></div>
+        </section>
+
+        <section id="hours" class="section split-section">
+            <div>
+                <p class="eyebrow" data-i18n="hours.eyebrow">Plan your visit</p>
+                <h2 data-i18n="hours.title">Store hours</h2>
+                <p class="muted" data-i18n="hours.subtitle">We look forward to welcoming you.</p>
+            </div>
+            <div id="schedule" class="hours-card" aria-live="polite"></div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div>
+                <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+                <h2 data-i18n="contact.title">Contact us</h2>
+                <p class="muted" data-i18n="contact.description">Have a question? We would be happy to help.</p>
+            </div>
+            <div id="contact-info" class="contact-card"></div>
+            <div id="social-links" class="social-card"></div>
+        </section>
+
+        <section id="location" class="section location-section">
+            <p class="eyebrow" data-i18n="location.eyebrow">Come see us</p>
+            <h2 data-i18n="location.title">Find us</h2>
+            <div id="map-view" class="map-card"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> My Canadian Stock - Sherbrooke</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
