@@ -219,6 +219,44 @@ http://my-canadian-stock:80
 
 After pushing a change, GitHub Actions rebuilds and republishes the image automatically. Once the workflow finishes, open the Portainer stack and choose **Pull and redeploy** (enable **Re-pull image**). Portainer will pull the newly published image and replace the running container while keeping the same port and Cloudflare route.
 
+## Deploy With GitHub Pages Instead of Portainer
+
+If you'd rather not run a container at all, GitHub Pages can host the static site directly, with Cloudflare only handling DNS (no tunnel or home server needed).
+
+### 1. Enable GitHub Pages
+
+1. On GitHub, open the repository **Settings > Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+
+The workflow at [.github/workflows/pages-deploy.yml](.github/workflows/pages-deploy.yml) publishes the contents of `src/` on every push to `main`. Check the **Actions** tab to confirm it succeeded — the site will be live at `https://fuegovic.github.io/mcssherbrooke/` once it finishes.
+
+### 2. Point the custom domain at Pages
+
+`src/CNAME` already declares `mcs.fuegovic.com` as the custom domain, so GitHub Pages will request it automatically after the first successful deploy. In **Settings > Pages**, confirm the custom domain field shows `mcs.fuegovic.com` and wait for the DNS check to pass.
+
+### 3. Update Cloudflare DNS
+
+In the Cloudflare dashboard for `fuegovic.com`, add a DNS record (not a tunnel route):
+
+```text
+Type:   CNAME
+Name:   mcs
+Target: fuegovic.github.io
+Proxy:  Proxied (orange cloud)
+```
+
+Remove or disable the old Cloudflare Tunnel **Published application** route for `mcs.fuegovic.com` so it doesn't conflict.
+
+### 4. Update the live site
+
+Just push to `main`. GitHub Actions rebuilds and republishes automatically — no Portainer, container, or manual redeploy step needed.
+
+```powershell
+git add .
+git commit -m "Update website"
+git push
+```
+
 ## Contributing
 
 We welcome contributions to improve the project. Please feel free to submit issues or pull requests.
