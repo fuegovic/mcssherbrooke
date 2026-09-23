@@ -1,7 +1,0 @@
-services:
-  website:
-    image: ghcr.io/fuegovic/mcssherbrooke:latest
-    container_name: my-canadian-stock
-    restart: unless-stopped
-    ports:
-      - "8085:80"
