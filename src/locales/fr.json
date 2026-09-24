@@ -1,6 +1,8 @@
 {
   "storeName": "Mon Stock Canadien - Sherbrooke",
   "ui": {
+    "pageTitle": "My Canadian Stock - Sherbrooke | Aubaines et liquidation",
+    "pageDescription": "My Canadian Stock au centre-ville de Sherbrooke propose des aubaines de liquidation, de nouveaux arrivages chaque samedi et des prix qui baissent chaque jour.",
     "nav.discover": "Découvrir",
     "nav.hours": "Heures",
     "nav.contact": "Contact",

@@ -1,6 +1,8 @@
 {
   "storeName": "My Canadian Stock - Sherbrooke",
   "ui": {
+    "pageTitle": "My Canadian Stock - Sherbrooke | Liquidation Deals",
+    "pageDescription": "My Canadian Stock in downtown Sherbrooke offers liquidation deals, new arrivals every Saturday, daily price drops, and products from major retailers.",
     "nav.discover": "Discover",
     "nav.hours": "Hours",
     "nav.contact": "Contact",

@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const render = () => {
         const label = labels[language];
         document.documentElement.lang = language;
+        document.title = content.ui.pageTitle;
+        document.querySelector('meta[name="description"]').setAttribute('content', content.ui.pageDescription);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', content.ui.pageTitle);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', content.ui.pageDescription);
         document.querySelectorAll('[data-i18n]').forEach((element) => {
             const value = content.ui?.[element.dataset.i18n];
             if (value) element.textContent = value;
