@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSwitcher = document.getElementById('language-switcher');
     const themeSwitcher = document.getElementById('theme-switcher');
-    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     let language = 'en';
     let content;
 
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const labels = {
-        en: { days: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], phone: 'Phone', call: 'Call', email: 'Email', address: 'Address', directions: 'Get directions', follow: 'Follow us', map: 'Open in Google Maps' },
-        fr: { days: ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'], phone: 'Téléphone', call: 'Appeler', email: 'Courriel', address: 'Adresse', directions: 'Itinéraire', follow: 'Suivez-nous', map: 'Ouvrir dans Google Maps' }
+        en: { days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], phone: 'Phone', call: 'Call', email: 'Email', address: 'Address', directions: 'Get directions', follow: 'Follow us', map: 'Open in Google Maps' },
+        fr: { days: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'], phone: 'Téléphone', call: 'Appeler', email: 'Courriel', address: 'Adresse', directions: 'Itinéraire', follow: 'Suivez-nous', map: 'Ouvrir dans Google Maps' }
     };
 
     const render = () => {
