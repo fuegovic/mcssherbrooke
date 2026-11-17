@@ -1,170 +1,710 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My Canadian Stock in downtown Sherbrooke offers liquidation deals, new arrivals every Saturday, daily price drops, and products from major retailers." />
-    <link rel="canonical" href="https://mcssherbrooke.ca/" />
-    <link rel="icon" type="image/jpeg" href="assets/mcs.jpg" />
-    <meta property="og:title" content="My Canadian Stock - Sherbrooke" />
-    <meta property="og:description" content="Liquidation deals, new arrivals every Saturday, and daily price drops in downtown Sherbrooke." />
-    <meta property="og:image" content="https://mcssherbrooke.ca/assets/MCS-Store.png" />
-    <meta property="og:url" content="https://mcssherbrooke.ca/" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "DiscountStore",
-        "name": "My Canadian Stock - Sherbrooke",
-        "url": "https://mcssherbrooke.ca/",
-        "image": "https://mcssherbrooke.ca/assets/MCS-Store.png",
-        "telephone": "+1-819-562-1516",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "103 Wellington N.",
-            "addressLocality": "Sherbrooke",
-            "addressRegion": "QC",
-            "postalCode": "J1H 5B9",
-            "addressCountry": "CA"
-        },
-        "sameAs": [
-            "https://www.facebook.com/mcs.sherbrooke/",
-            "https://www.instagram.com/mcs.sherbrooke/"
-        ],
-        "openingHoursSpecification": [
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:30", "closes": "17:30" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "10:30", "closes": "17:30" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:30", "closes": "17:30" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:30", "closes": "17:30" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:30", "closes": "17:30" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:30", "closes": "17:30" },
-            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:30", "closes": "18:30" }
-        ]
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Canadian Stock Sherbrooke | Weekly Liquidation &amp; Treasure Hunt</title>
+  <meta name="description" content="Downtown Sherbrooke's liquidation treasure hunt at 103 Wellington N. Fresh overstock from Amazon, Costco, Walmart & Canadian Tire every Saturday, with prices dropping through Friday." />
+  <link rel="icon" type="image/jpeg" href="assets/mcs.jpg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              50: '#f7f5f1',
+              100: '#f0ede7',
+              200: '#e4e6e5',
+              300: '#cbd2d3',
+              400: '#8b9599',
+              500: '#647078',
+              600: '#526069',
+              700: '#39454b',
+              800: '#3a4449',
+              900: '#20272b',
+              950: '#151a1d'
+            },
+            brand: {
+              red: '#E82428',
+              redDark: '#C8191C',
+              amber: '#F59E0B',
+              emerald: '#10B981',
+              slate: '#0F172A'
+            }
+          }
+        }
+      }
     }
-    </script>
-    <title>My Canadian Stock - Sherbrooke</title>
-    <link rel="stylesheet" href="styles/main.css" />
+  </script>
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <style>
+    /* Custom subtle grid background pattern */
+    .bg-grid-pattern {
+      background-size: 28px 28px;
+      background-image: radial-gradient(circle, rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    }
+    .dark .bg-grid-pattern {
+      background-image: radial-gradient(circle, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    }
+  </style>
 </head>
-<body>
-    <header class="site-header">
-        <a class="brand" href="#top" aria-label="My Canadian Stock - Sherbrooke home">
-            <img class="brand-logo" src="assets/mcs.jpg" alt="My Canadian Stock shopping cart logo" />
-            <span class="brand-name">My<br />Canadian<br /><b>Stock</b><small>Sherbrooke</small></span>
-        </a>
-        <nav aria-label="Main navigation">
-            <a href="#about" data-i18n="nav.discover">Discover</a>
-            <a href="#hours" data-i18n="nav.hours">Hours</a>
-            <a href="#contact" data-i18n="nav.contact">Contact</a>
-            <a href="#location" data-i18n="nav.location">Location</a>
-        </nav>
-        <button id="language-switcher" class="language-switcher" type="button" aria-label="Change language">FR</button>
-        <button id="theme-switcher" class="theme-switcher" type="button" aria-label="Switch to dark mode">
-            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" />
-            </svg>
-            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
-            </svg>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-[#E82428] selection:text-white">
+
+  <!-- Signature Brand Red Sticky Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-[#E82428] dark:bg-[#E82428] text-white border-b border-red-800/30 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#" class="brand-lockup flex items-center gap-3 group shrink-0" aria-label="My Canadian Stock Sherbrooke">
+        <img src="assets/mcs.jpg" alt="" class="h-12 w-12 shrink-0 rounded-lg object-cover" />
+        <span class="font-display font-extrabold leading-tight text-white">My Canadian Stock<small class="block text-[10px] font-semibold uppercase tracking-widest">Sherbrooke</small></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/90">
+        <a href="#how-it-works" class="hover:text-white transition-colors" data-i18n="nav_how">How It Works</a>
+        <a href="#why-visit" class="hover:text-white transition-colors" data-i18n="nav_why">Why Shop Here</a>
+        <a href="#categories" class="hover:text-white transition-colors" data-i18n="nav_finds">What's In Store</a>
+        <a href="#visit" class="hover:text-white transition-colors" data-i18n="nav_visit">Hours &amp; Location</a>
+      </nav>
+
+      <!-- Action Controls: Language Toggle, Theme Toggle & CTA -->
+      <div class="flex items-center gap-2">
+        <!-- Language Toggle -->
+        <button id="langToggle" type="button" aria-label="Switch to French" class="control-button rounded-lg text-xs font-bold border border-white/35 bg-white/15 text-white hover:bg-white/25 transition-colors">
+          FR
         </button>
-    </header>
 
-    <main id="top">
-        <section class="hero">
-            <div class="hero-content">
-                <p class="eyebrow" data-i18n="hero.eyebrow">Welcome to</p>
-                <h1>My Canadian Stock<br /><span>Sherbrooke</span></h1>
-                <p class="hero-text" data-i18n="hero.description">Great products, great value, right here in Sherbrooke.</p>
-                <a class="button" href="#location" data-i18n="hero.button">Visit us</a>
-            </div>
-        </section>
+        <!-- Dark/Light Theme Toggle -->
+        <button id="themeToggle" type="button" aria-label="Switch to dark mode" class="control-button rounded-lg border border-white/35 bg-white/15 text-white hover:bg-white/25 transition-colors">
+          <svg id="sunIcon" class="w-4 h-4 hidden dark:block text-amber-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg id="moonIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
 
-        <section id="about" class="section about-section">
-            <div class="about-heading">
-                <p class="eyebrow" data-i18n="about.eyebrow">Discover the store</p>
-                <h2 data-i18n="about.title">A treasure hunt, every visit</h2>
-                <p class="muted" data-i18n="about.intro"></p>
-                <p class="notice" data-i18n="about.notice"></p>
+        <a href="#visit" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white text-[#E82428] text-xs font-extrabold hover:bg-red-50 transition-colors shadow-sm" data-i18n="nav_cta">
+          Visit Store
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden bg-grid-pattern border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <!-- Left Column: Core Pitch & CTAs -->
+          <div class="lg:col-span-6 space-y-6">
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl tracking-tight leading-[1.08] text-slate-950 dark:text-white" data-i18n="hero_title">
+              A treasure hunt, <span class="text-[#E82428] dark:text-red-400">every visit.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed" data-i18n="hero_subtitle">
+              Liquidation merchandise, major retail overstock, and open-box deals right in downtown Sherbrooke. Fresh stock drops every Saturday, and prices step down across the week—reaching as low as $1 on Fridays depending on inventory.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <a href="#visit" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#E82428] hover:bg-[#C8191C] text-white font-semibold text-sm shadow-md hover:translate-y-[-1px] transition-all">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span data-i18n="hero_cta_primary">Visit Us — 103 Wellington N.</span>
+              </a>
+              <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors">
+                <span data-i18n="hero_cta_secondary">How Pricing Works</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
-            <div id="about-content" class="about-grid"></div>
-            <section class="category-section" aria-labelledby="categories-title">
-                <div class="category-heading">
-                    <p class="eyebrow" data-i18n="categories.eyebrow">Ever-changing finds</p>
-                    <h3 id="categories-title" data-i18n="categories.title">A little bit of everything</h3>
+
+            <!-- Retailer Sourcing Trust Strip -->
+            <div class="pt-4 border-t border-slate-200/80 dark:border-slate-800/80">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2.5" data-i18n="sourcing_label">
+                Overstock &amp; returns sourced from major retailers including
+              </p>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-xs font-bold tracking-tight text-slate-700 dark:text-slate-300">amazon</span>
+                <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-xs font-extrabold tracking-wide text-slate-700 dark:text-slate-300">COSTCO</span>
+                <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-xs font-bold text-slate-700 dark:text-slate-300">Walmart</span>
+                <span class="px-3 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-xs font-bold text-slate-700 dark:text-slate-300">Canadian Tire</span>
+                <span class="text-xs text-slate-500 dark:text-slate-400 pl-1" data-i18n="sourcing_more">&amp; more</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Storefront/Bin Photo Showcase + Weekly Rhythm Card -->
+          <div class="lg:col-span-6 space-y-4">
+            <!-- Hero photo -->
+            <div class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl group">
+              <img
+                src="assets/MCS-Store.png"
+                alt="My Canadian Stock Sherbrooke Storefront & Liquidation Finds"
+                class="w-full h-64 sm:h-72 object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <!-- Subtle Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent"></div>
+
+              <!-- Store logo -->
+              <div class="absolute top-3.5 left-3.5 w-10 h-10 rounded-xl bg-[#E82428] flex items-center justify-center shadow-md border border-white/20">
+                <img src="assets/mcs.jpg" alt="" class="h-8 w-8 rounded-md object-cover" />
+              </div>
+
+              <!-- Bottom Caption Overlay inside Hero Photo -->
+              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 text-white">
+                <div>
+                  <span class="inline-block px-2 py-0.5 rounded bg-[#E82428] text-[10px] font-bold uppercase tracking-wider mb-1" data-i18n="photo_badge">
+                    103 Wellington N. • Sherbrooke
+                  </span>
+                  <p class="font-display font-bold text-base sm:text-lg leading-snug" data-i18n="photo_caption">
+                    New pallets unboxed every Saturday morning
+                  </p>
                 </div>
-                <ul class="category-grid">
-                    <li class="category-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M8 2v2m8-2v2"/></svg>
-                        <span data-i18n="categories.appliances">Appliances</span>
-                    </li>
-                    <li class="category-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.7 6.3 3-3a5 5 0 0 0-6.4 6.4l-7.5 7.5a2.1 2.1 0 0 0 3 3l7.5-7.5a5 5 0 0 0 6.4-6.4l-3 3-3-3Z"/></svg>
-                        <span data-i18n="categories.tools">Tools</span>
-                    </li>
-                    <li class="category-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18v12H3zM7 8V5h10v3M8 13h8"/></svg>
-                        <span data-i18n="categories.home">Home goods</span>
-                    </li>
-                    <li class="category-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
-                        <span data-i18n="categories.electronics">Electronics</span>
-                    </li>
-                    <li class="category-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 14.8 9.2 21.5 10 16.5 14.6 17.8 21.3 12 18 6.2 21.3 7.5 14.6 2.5 10l6.7-.8L12 3Z"/></svg>
-                        <span data-i18n="categories.toys">Toys &amp; seasonal</span>
-                    </li>
-                    <li class="category-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8Z"/><circle cx="7" cy="7" r="1"/></svg>
-                        <span data-i18n="categories.accessories">Accessories</span>
-                    </li>
-                </ul>
-                <aside class="policy-card">
-                    <p class="eyebrow" data-i18n="policy.eyebrow">Good to know before you buy</p>
-                    <p data-i18n="policy.text">Please inspect and test items before leaving. For purchases over $5, report defects or missing parts within 24 hours for an exchange or store credit. Cash refunds and change-of-mind returns are not accepted. Clothing and shoes are final sale.</p>
-                </aside>
-            </section>
-        </section>
-
-        <section class="section week-cycle-section" aria-labelledby="week-cycle-title">
-            <div class="week-cycle-heading">
-                <p class="eyebrow" data-i18n="week.eyebrow">The weekly rhythm</p>
-                <h2 id="week-cycle-title" data-i18n="week.title">Fresh finds Saturday. Prices drop through Friday.</h2>
-                <p class="muted" data-i18n="week.description">New stock arrives Saturday. Prices then decrease based on remaining inventory. Friday prices are often around $5, with some items as low as $1.</p>
+                <span id="heroDayBadge" class="shrink-0 px-2.5 py-1 rounded-lg text-xs font-bold bg-white/95 text-slate-950 shadow-sm">
+                  Today
+                </span>
+              </div>
             </div>
-            <ol id="week-days" class="week-days" aria-labelledby="week-cycle-title"></ol>
-        </section>
 
-        <section id="hours" class="section split-section">
-            <div>
-                <p class="eyebrow" data-i18n="hours.eyebrow">Plan your visit</p>
-                <h2 data-i18n="hours.title">Store hours</h2>
-                <p class="muted" data-i18n="hours.subtitle">We look forward to welcoming you.</p>
+            <!-- Compact Weekly Trend Card Below Hero Image -->
+            <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-sm space-y-3.5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-[#E82428] dark:text-red-400 block" data-i18n="card_kicker">Dynamic Weekly Trend</span>
+                  <h2 class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="card_title">Saturday Restock → Friday Clearance</h2>
+                </div>
+                <div class="flex items-center gap-2 text-[11px]">
+                  <span class="text-slate-500 dark:text-slate-400" data-i18n="social_prompt">Follow us:</span>
+                  <a href="https://www.facebook.com/mcs.sherbrooke/" target="_blank" rel="noopener noreferrer" class="font-bold text-[#E82428] dark:text-red-400 hover:underline">Facebook ↗</a>
+                  <span class="text-slate-300 dark:text-slate-700">•</span>
+                  <a href="https://www.instagram.com/mcs.sherbrooke/" target="_blank" rel="noopener noreferrer" class="font-bold text-[#E82428] dark:text-red-400 hover:underline">Instagram ↗</a>
+                </div>
+              </div>
+
+              <!-- Visual Slope Graphic -->
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200/70 dark:border-slate-800 space-y-2">
+                <div class="flex items-end justify-between gap-2 h-20 pt-3 px-1" id="miniChart">
+                  <!-- Bars injected/highlighted by JS -->
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-medium text-slate-500 dark:text-slate-400 pt-1.5 border-t border-slate-200/70 dark:border-slate-800">
+                  <span class="text-[#E82428] dark:text-red-400 font-semibold" data-i18n="chart_sat">Sat: Fresh Drop (~around $25)</span>
+                  <span class="text-emerald-600 dark:text-emerald-400 font-semibold" data-i18n="chart_fri">Fri: As low as $1 ($1–$5)</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="dynamic_note">
+                <strong>Prices adapt daily to inventory:</strong> We set each morning's bin rate based on remaining stock and item quality—starting highest on Saturday and dropping to our lowest clearance tier (as low as $1, e.g., $1–$5) on Friday.
+              </p>
             </div>
-            <div id="schedule" class="hours-card" aria-live="polite"></div>
-        </section>
+          </div>
 
-        <section id="contact" class="section contact-section">
-            <div>
-                <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
-                <h2 data-i18n="contact.title">Contact us</h2>
-                <p class="muted" data-i18n="contact.description">Have a question? We would be happy to help.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: VISUAL 7-DAY FLEXIBLE PRICE TRAJECTORY -->
+    <section id="how-it-works" class="py-14 sm:py-20 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-2 max-w-2xl">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#E82428] dark:text-red-400" data-i18n="how_kicker">How The Hunt Works</span>
+            <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-slate-950 dark:text-white" data-i18n="how_title">
+              Shop early for peak selection, or late for lowest clearance prices
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="how_desc">
+              Because every shipment is different, we adjust daily bin prices each morning according to inventory—always peaking on Saturday with new arrivals and hitting our lowest prices on Friday.
+            </p>
+          </div>
+
+          <!-- High-Value Items Callout Pill -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs shrink-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+            <div class="text-xs">
+              <span class="font-bold text-slate-900 dark:text-white block" data-i18n="premium_tag">Larger &amp; High-Value Items</span>
+              <span class="text-slate-500 dark:text-slate-400" data-i18n="premium_sub">Priced individually at ~50% off retail</span>
             </div>
-            <div id="contact-info" class="contact-card"></div>
-            <div id="social-links" class="social-card"></div>
-        </section>
+          </div>
+        </div>
 
-        <section id="location" class="section location-section">
-            <p class="eyebrow" data-i18n="location.eyebrow">Come see us</p>
-            <h2 data-i18n="location.title">Find us</h2>
-            <div id="map-view" class="map-card"></div>
-        </section>
-    </main>
+        <!-- 7-Day Interactive Trajectory Strip -->
+        <div id="weekGrid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          <!-- Populated dynamically via JS to highlight current day & support EN/FR -->
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>© <span id="year"></span> My Canadian Stock - Sherbrooke</p>
-    </footer>
+    <!-- SECTION 3: CONSOLIDATED BENTO GRID -->
+    <section id="why-visit" class="py-14 sm:py-20 bg-white dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10">
+        <div class="max-w-2xl space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400" data-i18n="why_kicker">The In-Store Experience</span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-slate-950 dark:text-white" data-i18n="why_title">
+            Why Sherbrooke bargain hunters keep coming back
+          </h2>
+        </div>
 
-    <script src="scripts/main.js"></script>
+        <div class="grid md:grid-cols-2 gap-5">
+          <!-- Bento Card 1: Saturday Restocks -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-red-100 dark:bg-red-500/15 text-[#E82428] dark:text-red-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white" data-i18n="bento1_title">Fresh Stock Every Saturday</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="bento1_desc">
+                We restock the floor every Saturday morning with new pallets of appliances, tools, toys, home goods, and seasonal surprises. No two weeks are ever the same.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: In-Store Testing Station -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white" data-i18n="bento2_title">In-Store Testing Area</h3>
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300" data-i18n="bento2_badge">Buy with confidence</span>
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="bento2_desc">
+                Never guess what's inside the box. Open packages, inspect parts, and plug in electronics right at our dedicated testing counter before checkout.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: Daily Dropping Prices -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-amber-100 dark:bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white" data-i18n="bento3_title">Daily Dropping Prices</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="bento3_desc">
+                Bin prices are adjusted daily based on inventory—starting highest on Saturday with new arrivals and stepping down to our lowest rates on Fridays (as low as $1, e.g., $1–$5).
+              </p>
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Major Retail Overstock -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white" data-i18n="bento4_title">Major Retail Overstock</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="bento4_desc">
+                We source brand-new overstock, shelf pulls, and customer returns from Amazon, Costco, Walmart, and Canadian Tire—plus select high-value items at ~50% off retail.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CATEGORIES & CLEAN RETURN POLICY CALLOUT -->
+    <section id="categories" class="py-14 sm:py-20 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="cat_kicker">Ever-Changing Inventory</span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-slate-950 dark:text-white" data-i18n="cat_title">
+            What you'll discover in the bins
+          </h2>
+        </div>
+
+        <!-- 5 Category Tiles -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-2.5">
+            <div class="w-10 h-10 mx-auto rounded-full bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-[#E82428] dark:text-red-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <p class="font-semibold text-sm text-slate-900 dark:text-white" data-i18n="cat_1">Small Appliances</p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-2.5">
+            <div class="w-10 h-10 mx-auto rounded-full bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-[#E82428] dark:text-red-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <p class="font-semibold text-sm text-slate-900 dark:text-white" data-i18n="cat_2">Tools &amp; Hardware</p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-2.5">
+            <div class="w-10 h-10 mx-auto rounded-full bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-[#E82428] dark:text-red-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <p class="font-semibold text-sm text-slate-900 dark:text-white" data-i18n="cat_3">Tech &amp; Gadgets</p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-2.5">
+            <div class="w-10 h-10 mx-auto rounded-full bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-[#E82428] dark:text-red-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <p class="font-semibold text-sm text-slate-900 dark:text-white" data-i18n="cat_4">Home &amp; Décor</p>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-2.5">
+            <div class="w-10 h-10 mx-auto rounded-full bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-[#E82428] dark:text-red-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <p class="font-semibold text-sm text-slate-900 dark:text-white" data-i18n="cat_5">Toys &amp; Seasonal</p>
+          </div>
+        </div>
+
+        <!-- Subtle, Scannable Store Policy Notice -->
+        <div class="rounded-2xl bg-slate-100/80 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="policy_kicker">Good to Know Before You Buy</span>
+            </div>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="policy_text">
+              Please inspect and test items at our in-store station before leaving. Items over $5 qualify for a <strong>24-hour exchange or store credit</strong> if defective or missing parts (with receipt). No change-of-mind returns; clothing and shoes are final sale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" class="visit-section py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#E82428]" data-i18n="visit_kicker">Downtown Sherbrooke</span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight text-slate-950 dark:text-white" data-i18n="visit_title">Plan your visit</h2>
+        </div>
+
+        <div class="visit-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
+          <div class="visit-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6">
+            <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white mb-3" data-i18n="hours_title">Store Hours</h3>
+            <ul id="hoursList" class="hours-list divide-y divide-slate-100 dark:divide-slate-800/80 text-sm" aria-live="polite"></ul>
+          </div>
+
+          <div class="visit-card contact-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6">
+            <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white mb-3" data-i18n="contact_title">Contact us</h3>
+            <div class="contact-info space-y-3 text-sm text-slate-700 dark:text-slate-300">
+              <div class="address-block border-b border-slate-100 dark:border-slate-800 pb-3">
+                <span class="detail-label" data-i18n="address_label">Address</span>
+                <address class="not-italic">103 Wellington N.<br /><span data-i18n="address_locality">Sherbrooke, QC</span><br />J1H 5B9, Canada</address>
+              </div>
+              <a class="contact-link block font-semibold hover:underline" href="tel:+18195621516"><span data-i18n="contact_call">Call</span> · (819) 562-1516</a>
+              <a class="contact-link block font-semibold hover:underline" href="mailto:info@mcssherbrooke.ca">info@mcssherbrooke.ca</a>
+              <a class="directions-link block font-semibold hover:underline" href="https://www.google.com/maps/dir/?api=1&amp;destination=103%20Wellington%20N.%2C%20Sherbrooke%2C%20QC%20J1H%205B9" target="_blank" rel="noopener noreferrer" data-i18n="contact_directions">Get directions</a>
+            </div>
+            <div class="social-links border-t border-slate-100 dark:border-slate-800 mt-4 pt-3">
+              <span class="detail-label" data-i18n="contact_follow">Follow us</span>
+              <div class="flex flex-wrap gap-4 mt-2">
+                <a class="social-link inline-flex items-center gap-2 font-semibold hover:underline" href="https://www.instagram.com/mcs.sherbrooke/" target="_blank" rel="noopener noreferrer"><img src="assets/Instagram_logo_2022.svg.webp" alt="" class="h-5 w-5 object-contain" />Instagram</a>
+                <a class="social-link inline-flex items-center gap-2 font-semibold hover:underline" href="https://www.facebook.com/mcs.sherbrooke/" target="_blank" rel="noopener noreferrer"><img src="assets/2023_Facebook_icon.svg.webp" alt="" class="h-5 w-5 object-contain" />Facebook</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="map-view" class="visit-card map-card rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden md:col-span-2 lg:col-span-1">
+            <iframe id="mapFrame" title="My Canadian Stock - Sherbrooke" src="https://www.google.com/maps?q=103%20Wellington%20N.%2C%20Sherbrooke%2C%20QC&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-address flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-600 dark:text-slate-400">
+              <span>103 Wellington N., Sherbrooke, QC J1H 5B9</span>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=103%20Wellington%20N.%2C%20Sherbrooke%2C%20QC" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#E82428] hover:underline" data-i18n="maps_btn">Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Signature Brand Red Footer -->
+  <footer class="bg-[#E82428] dark:bg-[#E82428] text-white border-t border-red-800/30 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-center gap-6">
+      <!-- Store brand -->
+      <div class="flex items-center gap-4">
+        <a href="#" class="flex items-center gap-3 group" aria-label="My Canadian Stock Sherbrooke">
+          <img src="assets/mcs.jpg" alt="" class="h-11 w-11 shrink-0 rounded-lg object-cover" />
+          <span class="font-display font-extrabold leading-tight text-white">My Canadian Stock<small class="block text-[10px] font-semibold uppercase tracking-widest">Sherbrooke</small></span>
+        </a>
+        <div class="h-8 w-px bg-white/25 hidden sm:block"></div>
+        <p class="text-red-100 text-xs">© 2026 My Canadian Stock - Sherbrooke. <span data-i18n="footer_rights">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bilingual content, theme controls, and weekly schedule -->
+  <script>
+    const translations = {
+      en: {
+        nav_how: "How It Works",
+        nav_why: "Why Shop Here",
+        nav_finds: "What's In Store",
+        nav_visit: "Hours & Location",
+        nav_cta: "Visit Store",
+        hero_title: 'A treasure hunt, <span class="text-[#E82428] dark:text-red-400">every visit.</span>',
+        hero_subtitle: "Liquidation merchandise, major retail overstock, and open-box deals right in downtown Sherbrooke. Fresh stock drops every Saturday, and prices step down across the week—reaching as low as $1 on Fridays depending on inventory.",
+        hero_cta_primary: "Visit Us — 103 Wellington N.",
+        hero_cta_secondary: "How Pricing Works",
+        sourcing_label: "Overstock & returns sourced from major retailers including",
+        sourcing_more: "& more",
+        photo_badge: "103 Wellington N. • Sherbrooke",
+        photo_caption: "New pallets unboxed every Saturday morning",
+        card_kicker: "Dynamic Weekly Trend",
+        card_title: "Saturday Restock → Friday Clearance",
+        chart_sat: "Sat: Fresh Drop (~around $25)",
+        chart_fri: "Fri: As low as $1 ($1–$5)",
+        dynamic_note: "<strong>Prices adapt daily to inventory:</strong> We set each morning's bin rate based on remaining stock and item quality—starting highest on Saturday and dropping to our lowest clearance tier (as low as $1, e.g., $1–$5) on Friday.",
+        social_prompt: "Follow us:",
+        how_kicker: "How The Hunt Works",
+        how_title: "Shop early for peak selection, or late for lowest clearance prices",
+        how_desc: "Because every shipment is different, we adjust daily bin prices each morning according to inventory—always peaking on Saturday with new arrivals and hitting our lowest prices on Friday.",
+        premium_tag: "Larger & High-Value Items",
+        premium_sub: "Priced individually at ~50% off retail",
+        why_kicker: "The In-Store Experience",
+        why_title: "Why Sherbrooke bargain hunters keep coming back",
+        bento1_title: "Fresh Stock Every Saturday",
+        bento1_desc: "We restock the floor every Saturday morning with new pallets of appliances, tools, toys, home goods, and seasonal surprises. No two weeks are ever the same.",
+        bento2_title: "In-Store Testing Area",
+        bento2_badge: "Buy with confidence",
+        bento2_desc: "Never guess what's inside the box. Open packages, inspect parts, and plug in electronics right at our dedicated testing counter before checkout.",
+        bento3_title: "Daily Dropping Prices",
+        bento3_desc: "Bin prices are adjusted daily based on inventory—starting highest on Saturday with new arrivals and stepping down to our lowest rates on Fridays (as low as $1, e.g., $1–$5).",
+        bento4_title: "Major Retail Overstock",
+        bento4_desc: "We source brand-new overstock, shelf pulls, and customer returns from Amazon, Costco, Walmart, and Canadian Tire—plus select high-value items at ~50% off retail.",
+        cat_kicker: "Ever-Changing Inventory",
+        cat_title: "What you'll discover in the bins",
+        cat_1: "Small Appliances",
+        cat_2: "Tools & Hardware",
+        cat_3: "Tech & Gadgets",
+        cat_4: "Home & Décor",
+        cat_5: "Toys & Seasonal",
+        policy_kicker: "Good to Know Before You Buy",
+        policy_text: "Please inspect and test items at our in-store station before leaving. Items over $5 qualify for a <strong>24-hour exchange or store credit</strong> if defective or missing parts (with receipt). No change-of-mind returns; clothing and shoes are final sale.",
+        visit_kicker: "Downtown Sherbrooke",
+        visit_title: "Plan your visit",
+        page_title: "My Canadian Stock - Sherbrooke | Liquidation Deals",
+        hours_title: "Store Hours",
+        contact_title: "Contact us",
+        address_label: "Address",
+        address_locality: "Sherbrooke, QC",
+        contact_call: "Call",
+        contact_directions: "Get directions",
+        contact_follow: "Follow us",
+        maps_btn: "Open in Google Maps ↗",
+        map_title: "My Canadian Stock - Sherbrooke map",
+        footer_rights: "All rights reserved.",
+        today_label: "Today",
+        theme_to_light: "Switch to light mode",
+        theme_to_dark: "Switch to dark mode",
+        language_to_fr: "Switch to French",
+        language_to_en: "Switch to English",
+        days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        shortDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        cycleStages: [
+          { dayIndex: 6, badge: "Peak Selection", title: "Fresh Restock", desc: "New inventory hits the floor. Highest weekly tier (~around $25).", bar: 100, color: "bg-[#E82428]" },
+          { dayIndex: 0, badge: "Early Pick", title: "First Price Drop", desc: "Tons of great finds remaining at a lower Sunday bin rate.", bar: 82, color: "bg-orange-500" },
+          { dayIndex: 1, badge: "Mid-High Tier", title: "Monday Drop", desc: "Adjusted daily based on remaining stock and item quality.", bar: 68, color: "bg-amber-500" },
+          { dayIndex: 2, badge: "Sweet Spot", title: "Tuesday Drop", desc: "Great balance of solid selection and lowered bin pricing.", bar: 54, color: "bg-amber-400" },
+          { dayIndex: 3, badge: "Value Tier", title: "Wednesday Drop", desc: "Prices keep stepping down as we clear room for the weekend.", bar: 40, color: "bg-lime-500" },
+          { dayIndex: 4, badge: "Deep Discount", title: "Thursday Drop", desc: "Late-week bargains before Friday's clearance tier.", bar: 26, color: "bg-emerald-500" },
+          { dayIndex: 5, badge: "Lowest Clearance", title: "Friday Clearance", desc: "Cheapest day of the week—as low as $1 (e.g., $1–$5 depending on inventory).", bar: 14, color: "bg-emerald-600" }
+        ]
+      },
+      fr: {
+        nav_how: "Fonctionnement",
+        nav_why: "Pourquoi nous visiter",
+        nav_finds: "En magasin",
+        nav_visit: "Heures et adresse",
+        nav_cta: "Nous visiter",
+        hero_title: 'Une chasse au trésor <span class="text-[#E82428] dark:text-red-400">à chaque visite.</span>',
+        hero_subtitle: "Liquidation, surplus de grands détaillants et boîtes ouvertes au centre-ville de Sherbrooke. Nouveaux arrivages chaque samedi et baisse des prix toute la semaine—aussi bas que 1 $ le vendredi selon l’inventaire.",
+        hero_cta_primary: "Visitez-nous — 103 Wellington N.",
+        hero_cta_secondary: "Voir le cycle des prix",
+        sourcing_label: "Surplus et retours provenant de grands détaillants dont",
+        sourcing_more: "et plus",
+        photo_badge: "103 Wellington N. • Sherbrooke",
+        photo_caption: "Nouvelles palettes déballées chaque samedi matin",
+        card_kicker: "Tendance hebdomadaire",
+        card_title: "Arrivage du samedi → Liquidation du vendredi",
+        chart_sat: "Sam : Nouvel arrivage (~autour de 25 $)",
+        chart_fri: "Ven : Aussi bas que 1 $ (1 $–5 $)",
+        dynamic_note: "<strong>Prix ajustés chaque jour selon l'inventaire :</strong> Nous fixons le tarif des bacs chaque matin selon le stock restant et la qualité—plus élevé le samedi avec les nouveautés, et au plus bas le vendredi (aussi bas que 1 $, ex. 1 $ à 5 $).",
+        social_prompt: "Suivez-nous :",
+        how_kicker: "Comment ça marche",
+        how_title: "Venez tôt pour le choix, ou tard pour les plus bas prix",
+        how_desc: "Comme chaque arrivage est unique, nous ajustons le prix des bacs chaque matin selon l'inventaire—toujours au sommet le samedi et au plus bas le vendredi.",
+        premium_tag: "Gros articles et valeur supérieure",
+        premium_sub: "Prix individuels à ~50 % du prix régulier",
+        why_kicker: "L'expérience en magasin",
+        why_title: "Pourquoi les chasseurs d'aubaines de Sherbrooke reviennent",
+        bento1_title: "Nouveaux stocks chaque samedi",
+        bento1_desc: "Nous remplissons les bacs chaque samedi matin avec de nouvelles palettes d'électros, outils, jouets, articles maison et trouvailles saisonnières.",
+        bento2_title: "Zone de test en magasin",
+        bento2_badge: "Achetez en confiance",
+        bento2_desc: "Ne devinez jamais ce qu'il y a dans la boîte. Ouvrez les emballages, vérifiez les pièces et branchez les appareils électroniques à notre comptoir de test dédié avant de passer à la caisse.",
+        bento3_title: "Prix qui baissent chaque jour",
+        bento3_desc: "Les prix des bacs sont ajustés chaque jour selon l'inventaire—au sommet le samedi avec les nouveautés et au plus bas le vendredi (aussi bas que 1 $, ex. 1 $ à 5 $).",
+        bento4_title: "Surplus de grands détaillants",
+        bento4_desc: "Nous proposons des surplus neufs, fins de série et retours clients provenant d'Amazon, Costco, Walmart et Canadian Tire—plus des gros articles à ~50 % de rabais.",
+        cat_kicker: "Inventaire en constante évolution",
+        cat_title: "Ce que vous trouverez dans les bacs",
+        cat_1: "Petits électros",
+        cat_2: "Outils et quincaillerie",
+        cat_3: "Électronique et gadgets",
+        cat_4: "Maison et déco",
+        cat_5: "Jouets et saisonnier",
+        policy_kicker: "Bon à savoir avant d'acheter",
+        policy_text: "Veuillez inspecter et tester vos articles à notre station avant de quitter. Les articles de plus de 5 $ sont admissibles à un <strong>échange ou crédit en magasin sous 24 h</strong> en cas de défaut ou pièce manquante (avec reçu). Aucun retour pour changement d'idée ; vêtements et chaussures : vente finale.",
+        visit_kicker: "Centre-ville de Sherbrooke",
+        visit_title: "Planifiez votre visite",
+        page_title: "My Canadian Stock - Sherbrooke | Aubaines et liquidation",
+        hours_title: "Heures d'ouverture",
+        contact_title: "Contactez-nous",
+        address_label: "Adresse",
+        address_locality: "Sherbrooke, Québec",
+        contact_call: "Appeler",
+        contact_directions: "Itinéraire",
+        contact_follow: "Suivez-nous",
+        maps_btn: "Ouvrir dans Google Maps ↗",
+        map_title: "Carte de My Canadian Stock - Sherbrooke",
+        footer_rights: "Tous droits réservés.",
+        today_label: "Aujourd'hui",
+        theme_to_light: "Passer au thème clair",
+        theme_to_dark: "Passer au thème sombre",
+        language_to_fr: "Passer en français",
+        language_to_en: "Passer en anglais",
+        days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+        shortDays: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+        cycleStages: [
+          { dayIndex: 6, badge: "Choix maximal", title: "Nouvel arrivage", desc: "Nouveaux stocks en magasin. Tarif hebdomadaire le plus élevé (~autour de 25 $).", bar: 100, color: "bg-[#E82428]" },
+          { dayIndex: 0, badge: "Premier rabais", title: "Baisse du dimanche", desc: "Énormément de belles trouvailles restantes à tarif réduit.", bar: 82, color: "bg-orange-500" },
+          { dayIndex: 1, badge: "Tarif modéré", title: "Baisse du lundi", desc: "Ajusté chaque jour selon l'inventaire restant et la qualité.", bar: 68, color: "bg-amber-500" },
+          { dayIndex: 2, badge: "Bel équilibre", title: "Baisse du mardi", desc: "Excellent équilibre entre beau choix et prix réduits.", bar: 54, color: "bg-amber-400" },
+          { dayIndex: 3, badge: "Petits prix", title: "Baisse du mercredi", desc: "Les prix continuent de descendre avant la fin de semaine.", bar: 40, color: "bg-lime-500" },
+          { dayIndex: 4, badge: "Gros rabais", title: "Baisse du jeudi", desc: "Aubaines de fin de semaine avant la liquidation du vendredi.", bar: 26, color: "bg-emerald-500" },
+          { dayIndex: 5, badge: "Liquidation", title: "Liquidation du vendredi", desc: "Journée la moins chère — aussi bas que 1 $ (ex. 1 $ à 5 $ selon l’inventaire).", bar: 14, color: "bg-emerald-600" }
+        ]
+      }
+    };
+
+    const schedule = {
+      0: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      1: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      2: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      3: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      4: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      5: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      6: { labelEn: "10:30 AM - 6:30 PM", labelFr: "10 h 30 - 18 h 30" }
+    };
+
+    let currentLang = 'en';
+    const todayName = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Toronto', weekday: 'long' }).format(new Date());
+    const todayIndex = translations.en.days.indexOf(todayName);
+    const langToggle = document.getElementById('langToggle');
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('mcs-theme');
+
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+
+    function updateControlLabels(t) {
+      langToggle.setAttribute('aria-label', currentLang === 'en' ? t.language_to_fr : t.language_to_en);
+      themeToggle.setAttribute('aria-label', document.documentElement.classList.contains('dark') ? t.theme_to_light : t.theme_to_dark);
+    }
+
+    function renderDynamicUI() {
+      const t = translations[currentLang];
+      const cycleStages = t.cycleStages;
+
+      // 1. Update static text elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.innerHTML = t[key];
+      });
+      document.title = t.page_title;
+      updateControlLabels(t);
+      document.getElementById('mapFrame').title = t.map_title;
+
+      document.getElementById('heroDayBadge').textContent = `${t.today_label}: ${t.days[todayIndex]}`;
+
+      // 2. Render Hero Mini Slope Chart
+      const miniChart = document.getElementById('miniChart');
+      miniChart.innerHTML = cycleStages.map(stage => {
+        const isToday = stage.dayIndex === todayIndex;
+        return `
+          <div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+            ${isToday ? `<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-slate-900 dark:bg-white text-white dark:text-slate-950 tracking-tight">${t.today_label}</span>` : ''}
+            <div class="w-full rounded-t-md transition-all duration-300 ${stage.color} ${isToday ? 'ring-2 ring-offset-2 ring-slate-900 dark:ring-white dark:ring-offset-slate-950 opacity-100' : 'opacity-75'}" style="height: ${stage.bar}%"></div>
+            <span class="text-[11px] font-semibold ${isToday ? 'text-slate-950 dark:text-white font-bold' : 'text-slate-500 dark:text-slate-400'}">${t.shortDays[stage.dayIndex]}</span>
+          </div>
+        `;
+      }).join('');
+
+      // 3. Render Full 7-Day Trajectory Cards
+      const weekGrid = document.getElementById('weekGrid');
+      weekGrid.innerHTML = cycleStages.map(stage => {
+        const isToday = stage.dayIndex === todayIndex;
+        return `
+          <div class="relative rounded-2xl p-4 border transition-all flex flex-col justify-between gap-3 ${
+            isToday
+              ? 'bg-white dark:bg-slate-900 border-slate-900 dark:border-amber-400 ring-2 ring-slate-900/10 dark:ring-amber-400/20 shadow-md'
+              : 'bg-white/70 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800'
+          }">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-1">
+                <span class="font-display font-bold text-sm text-slate-950 dark:text-white">${t.days[stage.dayIndex]}</span>
+                ${isToday ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-900 dark:bg-amber-400 text-white dark:text-slate-950">${t.today_label}</span>` : ''}
+              </div>
+              <span class="inline-block text-[11px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                ${stage.badge}
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-1">
+                ${stage.desc}
+              </p>
+            </div>
+            <div class="w-full h-1.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              <div class="h-full rounded-full ${stage.color}" style="width: ${stage.bar}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 4. Render Store Hours List (Sunday -> Saturday, highlighting Today)
+      const displayOrder = [0, 1, 2, 3, 4, 5, 6];
+      const hoursList = document.getElementById('hoursList');
+      hoursList.innerHTML = displayOrder.map(dIdx => {
+        const isToday = dIdx === todayIndex;
+        const timeStr = currentLang === 'en' ? schedule[dIdx].labelEn : schedule[dIdx].labelFr;
+        return `
+          <li class="py-2.5 flex items-center justify-between ${isToday ? 'font-bold text-slate-950 dark:text-white bg-amber-50/70 dark:bg-amber-500/10 -mx-2 px-2 rounded-lg' : 'text-slate-600 dark:text-slate-400'}">
+            <span class="flex items-center gap-2">
+              ${t.days[dIdx]}
+              ${isToday ? `<span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-200/80 dark:bg-amber-500/25 text-amber-900 dark:text-amber-300">${t.today_label}</span>` : ''}
+            </span>
+            <span>${timeStr}</span>
+          </li>
+        `;
+      }).join('');
+    }
+
+    // Language Toggle Handler
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      langToggle.textContent = currentLang === 'en' ? 'FR' : 'EN';
+      document.documentElement.lang = currentLang;
+      renderDynamicUI();
+    });
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('mcs-theme', isDark ? 'dark' : 'light');
+      updateControlLabels(translations[currentLang]);
+    });
+
+    // Initialize
+    renderDynamicUI();
+  </script>
 </body>
 </html>

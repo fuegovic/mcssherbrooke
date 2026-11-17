@@ -9,25 +9,11 @@ The project is organized as follows:
 ```
 my-canadian-stock-sherbrooke
 ├── src
-│   ├── index.html          # Main HTML file for the website
-│   ├── styles              # Directory for CSS styles
-│   │   └── main.css        # Main stylesheet
-│   ├── scripts             # Directory for JavaScript files
-│   │   ├── main.js         # Main JavaScript file
-│   │   └── map.js          # JavaScript for map integration
-│   ├── locales             # Directory for localization files
-│   │   ├── en.json         # English translations
-│   │   └── fr.json         # French translations
-│   ├── components          # Directory for React components
-│   │   ├── Header.js       # Header component
-│   │   ├── Footer.js       # Footer component
-│   │   ├── Schedule.js     # Schedule component
-│   │   ├── ContactInfo.js   # Contact information component
-│   │   ├── SocialLinks.js   # Social media links component
-│   │   └── MapView.js      # Map view component
-│   └── assets              # Directory for assets
-│       └── icons           # Icons used in the website
-├── package.json            # NPM configuration file
+│   ├── assets/             # Store photo, brand mark, and social icons
+│   ├── index.html          # Static storefront, bilingual content, and interactions
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── styles/main.css     # Responsive page styles
 └── README.md               # Project documentation
 ```
 
@@ -41,31 +27,15 @@ my-canadian-stock-sherbrooke
 
 ## Local Development
 
-To get started with the project, follow these steps:
+No package installation or build step is needed. From the project root, start a local preview server:
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+```powershell
+python -m http.server 8000 --directory src
+```
 
-2. Navigate to the project directory:
-   ```
-   cd my-canadian-stock-sherbrooke
-   ```
+Then open `http://localhost:8000`. Tailwind CSS, Google Fonts, and the embedded map load from external services.
 
-3. Install the dependencies:
-   ```
-   npm install
-   ```
-
-4. Start the development server:
-   ```
-   npm start
-   ```
-
-5. Open your browser and visit the URL shown by Live Server to view the application.
-
-The site is static, but it must be served through a web server because the page loads the English and French locale files with `fetch()`.
+The storefront is static. Its bilingual copy and interactions live in `src/index.html`, with local style overrides in `src/styles/main.css`. Tailwind CSS and Google Fonts load from their CDNs. No production build step is required; Cloudflare Pages serves `src/` directly.
 
 ## Publish With Cloudflare Pages
 
