@@ -20,9 +20,13 @@
     "categories.tools": "Outils",
     "categories.home": "Articles pour la maison",
     "categories.toys": "Jouets et saisonnier",
+    "categories.electronics": "Électronique",
     "categories.accessories": "Accessoires",
     "policy.eyebrow": "Bon à savoir avant d'acheter",
     "policy.text": "Veuillez inspecter et tester vos articles avant de quitter. Pour les achats de plus de 5 $, signalez tout défaut ou pièce manquante dans les 24 heures (au plus tard à la fermeture le lendemain) pour obtenir un échange ou un crédit en magasin. Aucun remboursement en argent ni retour pour changement d'idée. Vêtements et chaussures : vente finale.",
+    "week.eyebrow": "Le rythme de la semaine",
+    "week.title": "Arrivages le samedi. Les prix baissent jusqu'au vendredi.",
+    "week.description": "Les nouveaux stocks arrivent le samedi. Les prix diminuent ensuite selon l'inventaire restant. Le vendredi, les prix tournent souvent autour de 5 $, certains articles pouvant descendre jusqu'à 1 $.",
     "hours.eyebrow": "Planifiez votre visite",
     "hours.title": "Heures d'ouverture",
     "hours.subtitle": "Au plaisir de vous accueillir.",
@@ -52,7 +56,7 @@
       },
       {
         "title": "Des prix qui baissent toute la semaine",
-        "body": "Les prix diminuent progressivement selon l'inventaire restant. La plage habituelle va de 25 $ le samedi jusqu'à aussi peu que 1 $ le vendredi, selon la quantité, la qualité et la demande. Les articles plus dispendieux sont différents : leur prix est généralement fixe, à environ 50 % de rabais sur le prix régulier en magasin."
+        "body": "Les prix diminuent progressivement selon l'inventaire restant. Les bacs sont plus chers le samedi avec les nouveaux arrivages; le vendredi, les prix tournent souvent autour de 5 $, certains articles pouvant descendre jusqu'à 1 $. Les articles plus dispendieux sont différents : leur prix est généralement fixe, à environ 50 % de rabais sur le prix régulier en magasin."
       }
     ]
   },

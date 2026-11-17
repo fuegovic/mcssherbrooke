@@ -20,9 +20,13 @@
     "categories.tools": "Tools",
     "categories.home": "Home goods",
     "categories.toys": "Toys & seasonal",
+    "categories.electronics": "Electronics",
     "categories.accessories": "Accessories",
     "policy.eyebrow": "Good to know before you buy",
     "policy.text": "Please inspect and test items before leaving. For purchases over $5, report defects or missing parts within 24 hours (by closing the next day) for an exchange or store credit. Cash refunds and change-of-mind returns are not accepted. Clothing and shoes are final sale.",
+    "week.eyebrow": "The weekly rhythm",
+    "week.title": "Fresh finds Saturday. Prices drop through Friday.",
+    "week.description": "New stock arrives Saturday. Prices then decrease based on remaining inventory. Friday prices are often around $5, with some items as low as $1.",
     "hours.eyebrow": "Plan your visit",
     "hours.title": "Store hours",
     "hours.subtitle": "We look forward to welcoming you.",
@@ -52,7 +56,7 @@
       },
       {
         "title": "Prices drop all week",
-        "body": "Prices gradually decrease based on what remains. The usual range is $25 on Saturday down to as little as $1 on Friday, adjusted according to quantity, quality, and demand. Higher-priced items are different: their price is generally fixed at about 50% off the regular in-store price."
+        "body": "Prices gradually decrease based on what remains. Bin prices start highest with fresh stock on Saturday and are often around $5 on Friday, with some items as low as $1. Higher-priced items are different: their price is generally fixed at about 50% off the regular in-store price."
       }
     ]
   },

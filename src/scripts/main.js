@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const labels = {
-        en: { days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], phone: 'Phone', call: 'Call', email: 'Email', address: 'Address', directions: 'Get directions', follow: 'Follow us', map: 'Open in Google Maps' },
-        fr: { days: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'], phone: 'Téléphone', call: 'Appeler', email: 'Courriel', address: 'Adresse', directions: 'Itinéraire', follow: 'Suivez-nous', map: 'Ouvrir dans Google Maps' }
+        en: { days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], today: 'Today', phone: 'Phone', call: 'Call', email: 'Email', address: 'Address', directions: 'Get directions', follow: 'Follow us', map: 'Open in Google Maps' },
+        fr: { days: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'], today: "Aujourd'hui", phone: 'Téléphone', call: 'Appeler', email: 'Courriel', address: 'Adresse', directions: 'Itinéraire', follow: 'Suivez-nous', map: 'Ouvrir dans Google Maps' }
     };
 
     const render = () => {
@@ -42,8 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (value) element.textContent = value;
         });
         document.getElementById('about-content').innerHTML = content.about.cards.map((card) => `<article class="about-card"><h3>${card.title}</h3><p>${card.body}</p>${card.items ? `<ul>${card.items.map((item) => `<li>${item}</li>`).join('')}</ul>` : ''}</article>`).join('');
-        document.getElementById('schedule').innerHTML = days.map((day, index) =>
-            `<div class="hours-row"><span>${label.days[index]}</span><strong>${content.schedule[day]}</strong></div>`).join('');
+        const today = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Toronto', weekday: 'long' }).format(new Date()).toLowerCase();
+        document.getElementById('week-days').innerHTML = days.map((day, index) => {
+            const isToday = day === today;
+            return `<li class="week-day${isToday ? ' current-day' : ''}"${isToday ? ' aria-current="date"' : ''}><span>${label.days[index]}</span>${isToday ? `<span class="today-badge">${label.today}</span>` : ''}</li>`;
+        }).join('');
+        document.getElementById('schedule').innerHTML = days.map((day, index) => {
+            const isToday = day === today;
+            return `<div class="hours-row${isToday ? ' current-day' : ''}"${isToday ? ' aria-current="date"' : ''}><span>${label.days[index]}${isToday ? `<span class="today-badge">${label.today}</span>` : ''}</span><strong>${content.schedule[day]}</strong></div>`;
+        }).join('');
         const emailLink = content.contact.email ? `<a href="mailto:${content.contact.email}">✉ ${content.contact.email}</a>` : '';
         const addressQuery = encodeURIComponent(`${content.address.street}, ${content.address.city}, ${content.address.province} ${content.address.postalCode}`);
         document.getElementById('contact-info').innerHTML = `<strong>${label.address}</strong><span>${content.address.street}<br>${content.address.city}, ${content.address.province}<br>${content.address.postalCode}, Canada</span><a class="action-button" href="tel:${content.contact.phone.replace(/[^+\d]/g, '')}">☎ ${label.call} · ${content.contact.phone}</a><a class="action-button secondary-action" href="https://www.google.com/maps/dir/?api=1&destination=${addressQuery}" target="_blank" rel="noopener">↗ ${label.directions}</a>${emailLink}`;
