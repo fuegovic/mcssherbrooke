@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const setTheme = (theme) => {
         document.documentElement.dataset.theme = theme;
         const isDark = theme === 'dark';
-        themeSwitcher.textContent = isDark ? '☀' : '☾';
         themeSwitcher.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
         themeSwitcher.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
     };
