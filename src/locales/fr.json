@@ -57,13 +57,13 @@
     ]
   },
   "schedule": {
-    "monday": "11 h 00 - 18 h 00",
-    "tuesday": "11 h 00 - 18 h 00",
-    "wednesday": "11 h 00 - 18 h 00",
-    "thursday": "11 h 00 - 19 h 00",
-    "friday": "11 h 00 - 19 h 00",
-    "saturday": "11 h 00 - 19 h 00",
-    "sunday": "11 h 00 - 18 h 00"
+    "monday": "10 h 30 - 17 h 30",
+    "tuesday": "10 h 30 - 17 h 30",
+    "wednesday": "10 h 30 - 17 h 30",
+    "thursday": "10 h 30 - 17 h 30",
+    "friday": "10 h 30 - 17 h 30",
+    "saturday": "10 h 30 - 18 h 30",
+    "sunday": "10 h 30 - 17 h 30"
   },
   "address": {
     "street": "103 Wellington N.",
