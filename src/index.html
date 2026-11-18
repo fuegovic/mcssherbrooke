@@ -107,7 +107,12 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
       <a href="#" class="brand-lockup flex items-center gap-3 group shrink-0" aria-label="My Canadian Stock Sherbrooke">
         <img src="assets/mcs.jpg" alt="" class="h-12 w-12 shrink-0 rounded-lg object-cover" />
-        <span class="font-display font-extrabold leading-tight text-white">My Canadian Stock<small class="block text-[10px] font-semibold uppercase tracking-widest">Sherbrooke</small></span>
+        <span class="brand-wordmark font-display font-extrabold text-white">
+          <span>My</span>
+          <span>Canadian</span>
+          <span class="brand-wordmark__stock">Stock</span>
+          <small class="block text-[10px] font-semibold uppercase tracking-widest">Sherbrooke</small>
+        </span>
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -145,8 +150,14 @@
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           <!-- Left Column: Core Pitch & CTAs -->
           <div class="lg:col-span-6 space-y-6">
+            <div id="storeStatus" class="hero-status" role="status" aria-live="polite" aria-atomic="true">
+              <span class="hero-status__dot" aria-hidden="true"></span>
+              <span id="storeStatusText" class="hero-status__message"></span>
+              <span class="hero-status__divider" aria-hidden="true">|</span>
+              <span class="hero-status__address">103 Wellington N.</span>
+            </div>
             <h1 class="font-display font-extrabold text-4xl sm:text-5xl tracking-tight leading-[1.08] text-slate-950 dark:text-white" data-i18n="hero_title">
-              A treasure hunt, <span class="text-[#E82428] dark:text-red-400">every visit.</span>
+              A treasure hunt, <span class="hero-gradient-text">every visit.</span>
             </h1>
 
             <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed" data-i18n="hero_subtitle">
@@ -204,7 +215,7 @@
                     103 Wellington N. • Sherbrooke
                   </span>
                   <p class="font-display font-bold text-base sm:text-lg leading-snug" data-i18n="photo_caption">
-                    New pallets unboxed every Saturday morning
+                    New inventory every Saturday morning
                   </p>
                 </div>
                 <span id="heroDayBadge" class="shrink-0 px-2.5 py-1 rounded-lg text-xs font-bold bg-white/95 text-slate-950 shadow-sm">
@@ -220,7 +231,7 @@
                   <span class="text-[10px] font-bold uppercase tracking-wider text-[#E82428] dark:text-red-400 block" data-i18n="card_kicker">Dynamic Weekly Trend</span>
                   <h2 class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="card_title">Saturday Restock → Friday Clearance</h2>
                 </div>
-                <div class="flex items-center gap-2 text-[11px]">
+                <div class="flex flex-wrap items-center gap-2 text-[11px]">
                   <span class="text-slate-500 dark:text-slate-400" data-i18n="social_prompt">Follow us:</span>
                   <a href="https://www.facebook.com/mcs.sherbrooke/" target="_blank" rel="noopener noreferrer" class="font-bold text-[#E82428] dark:text-red-400 hover:underline">Facebook ↗</a>
                   <span class="text-slate-300 dark:text-slate-700">•</span>
@@ -230,7 +241,7 @@
 
               <!-- Visual Slope Graphic -->
               <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200/70 dark:border-slate-800 space-y-2">
-                <div class="flex items-end justify-between gap-2 h-20 pt-3 px-1" id="miniChart">
+                <div class="flex items-end justify-between gap-2 h-32 sm:h-36 pt-3 px-1" id="miniChart">
                   <!-- Bars injected/highlighted by JS -->
                 </div>
                 <div class="flex items-center justify-between text-[11px] font-medium text-slate-500 dark:text-slate-400 pt-1.5 border-t border-slate-200/70 dark:border-slate-800">
@@ -239,9 +250,15 @@
                 </div>
               </div>
 
-              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="dynamic_note">
-                <strong>Prices adapt daily to inventory:</strong> We set each morning's bin rate based on remaining stock and item quality—starting highest on Saturday and dropping to our lowest clearance tier (as low as $1, e.g., $1–$5) on Friday.
-              </p>
+              <div class="chart-note" role="note">
+                <svg class="chart-note__icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path stroke-linecap="round" d="M12 8v4m0 4h.01"></path>
+                </svg>
+                <p class="chart-note__text text-xs leading-relaxed" data-i18n="dynamic_note">
+                  <strong>Why aren't exact daily prices listed?</strong> We set each day's bin price based on live inventory, item quality, and demand. Saturdays start highest with brand-new stock; Fridays hit our lowest clearance prices!
+                </p>
+              </div>
             </div>
           </div>
 
@@ -281,7 +298,7 @@
     </section>
 
     <!-- SECTION 3: CONSOLIDATED BENTO GRID -->
-    <section id="why-visit" class="py-14 sm:py-20 bg-white dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800/80">
+    <section id="why-visit" class="py-14 sm:py-20 border-b border-slate-200/80 dark:border-slate-800/80">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10">
         <div class="max-w-2xl space-y-2">
           <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400" data-i18n="why_kicker">The In-Store Experience</span>
@@ -292,7 +309,7 @@
 
         <div class="grid md:grid-cols-2 gap-5">
           <!-- Bento Card 1: Saturday Restocks -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+          <div class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
             <div class="w-11 h-11 rounded-xl bg-red-100 dark:bg-red-500/15 text-[#E82428] dark:text-red-400 flex items-center justify-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             </div>
@@ -305,7 +322,7 @@
           </div>
 
           <!-- Bento Card 2: In-Store Testing Station -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+          <div class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
             <div class="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
@@ -321,7 +338,7 @@
           </div>
 
           <!-- Bento Card 3: Daily Dropping Prices -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+          <div class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
             <div class="w-11 h-11 rounded-xl bg-amber-100 dark:bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
             </div>
@@ -334,14 +351,14 @@
           </div>
 
           <!-- Bento Card 4: Major Retail Overstock -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+          <div class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 flex flex-col justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
             <div class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
             </div>
             <div class="space-y-2">
               <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white" data-i18n="bento4_title">Major Retail Overstock</h3>
               <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="bento4_desc">
-                We source brand-new overstock, shelf pulls, and customer returns from Amazon, Costco, Walmart, and Canadian Tire—plus select high-value items at ~50% off retail.
+                Amazon is our main source of overstock, shelf pulls, and customer returns, supplemented by inventory from Costco, Walmart, Canadian Tire, and more. We also feature select premium and big-ticket items at roughly 50% off retail.
               </p>
             </div>
           </div>
@@ -463,7 +480,12 @@
       <div class="flex items-center gap-4">
         <a href="#" class="flex items-center gap-3 group" aria-label="My Canadian Stock Sherbrooke">
           <img src="assets/mcs.jpg" alt="" class="h-11 w-11 shrink-0 rounded-lg object-cover" />
-          <span class="font-display font-extrabold leading-tight text-white">My Canadian Stock<small class="block text-[10px] font-semibold uppercase tracking-widest">Sherbrooke</small></span>
+          <span class="brand-wordmark font-display font-extrabold text-white">
+            <span>My</span>
+            <span>Canadian</span>
+            <span class="brand-wordmark__stock">Stock</span>
+            <small class="block text-[10px] font-semibold uppercase tracking-widest">Sherbrooke</small>
+          </span>
         </a>
         <div class="h-8 w-px bg-white/25 hidden sm:block"></div>
         <p class="text-red-100 text-xs">© 2026 My Canadian Stock - Sherbrooke. <span data-i18n="footer_rights">All rights reserved.</span></p>
@@ -480,20 +502,24 @@
         nav_finds: "What's In Store",
         nav_visit: "Hours & Location",
         nav_cta: "Visit Store",
-        hero_title: 'A treasure hunt, <span class="text-[#E82428] dark:text-red-400">every visit.</span>',
+        hero_title: 'A treasure hunt, <span class="hero-gradient-text">every visit.</span>',
+        status_open_now: "Open now",
+        status_closed: "Currently closed",
+        status_opens_at: "Opens at",
+        status_closes_at: "Closes at",
         hero_subtitle: "Liquidation merchandise, major retail overstock, and open-box deals right in downtown Sherbrooke. Fresh stock drops every Saturday, and prices step down across the week—reaching as low as $1 on Fridays depending on inventory.",
         hero_cta_primary: "Visit Us — 103 Wellington N.",
         hero_cta_secondary: "How Pricing Works",
         sourcing_label: "Overstock & returns sourced from major retailers including",
         sourcing_more: "& more",
         photo_badge: "103 Wellington N. • Sherbrooke",
-        photo_caption: "New pallets unboxed every Saturday morning",
+        photo_caption: "New inventory every Saturday morning",
         card_kicker: "Dynamic Weekly Trend",
         card_title: "Saturday Restock → Friday Clearance",
         chart_sat: "Sat: Fresh Drop (~around $25)",
         chart_fri: "Fri: As low as $1 ($1–$5)",
-        dynamic_note: "<strong>Prices adapt daily to inventory:</strong> We set each morning's bin rate based on remaining stock and item quality—starting highest on Saturday and dropping to our lowest clearance tier (as low as $1, e.g., $1–$5) on Friday.",
-        social_prompt: "Follow us:",
+        dynamic_note: "<strong>Why aren't exact daily prices listed?</strong> We set each day's bin price based on live inventory, item quality, and demand. Saturdays start highest with brand-new stock; Fridays hit our lowest clearance prices!",
+        social_prompt: "Follow us for daily pricing and promotions:",
         how_kicker: "How The Hunt Works",
         how_title: "Shop early for peak selection, or late for lowest clearance prices",
         how_desc: "Because every shipment is different, we adjust daily bin prices each morning according to inventory—always peaking on Saturday with new arrivals and hitting our lowest prices on Friday.",
@@ -509,7 +535,7 @@
         bento3_title: "Daily Dropping Prices",
         bento3_desc: "Bin prices are adjusted daily based on inventory—starting highest on Saturday with new arrivals and stepping down to our lowest rates on Fridays (as low as $1, e.g., $1–$5).",
         bento4_title: "Major Retail Overstock",
-        bento4_desc: "We source brand-new overstock, shelf pulls, and customer returns from Amazon, Costco, Walmart, and Canadian Tire—plus select high-value items at ~50% off retail.",
+        bento4_desc: "Amazon is our main source of overstock, shelf pulls, and customer returns, supplemented by inventory from Costco, Walmart, Canadian Tire, and more. We also feature select premium and big-ticket items at roughly 50% off retail.",
         cat_kicker: "Ever-Changing Inventory",
         cat_title: "What you'll discover in the bins",
         cat_1: "Small Appliances",
@@ -541,12 +567,12 @@
         shortDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         cycleStages: [
           { dayIndex: 6, badge: "Peak Selection", title: "Fresh Restock", desc: "New inventory hits the floor. Highest weekly tier (~around $25).", bar: 100, color: "bg-[#E82428]" },
-          { dayIndex: 0, badge: "Early Pick", title: "First Price Drop", desc: "Tons of great finds remaining at a lower Sunday bin rate.", bar: 82, color: "bg-orange-500" },
-          { dayIndex: 1, badge: "Mid-High Tier", title: "Monday Drop", desc: "Adjusted daily based on remaining stock and item quality.", bar: 68, color: "bg-amber-500" },
-          { dayIndex: 2, badge: "Sweet Spot", title: "Tuesday Drop", desc: "Great balance of solid selection and lowered bin pricing.", bar: 54, color: "bg-amber-400" },
-          { dayIndex: 3, badge: "Value Tier", title: "Wednesday Drop", desc: "Prices keep stepping down as we clear room for the weekend.", bar: 40, color: "bg-lime-500" },
-          { dayIndex: 4, badge: "Deep Discount", title: "Thursday Drop", desc: "Late-week bargains before Friday's clearance tier.", bar: 26, color: "bg-emerald-500" },
-          { dayIndex: 5, badge: "Lowest Clearance", title: "Friday Clearance", desc: "Cheapest day of the week—as low as $1 (e.g., $1–$5 depending on inventory).", bar: 14, color: "bg-emerald-600" }
+          { dayIndex: 0, badge: "Early Pick", title: "First Price Drop", desc: "Tons of great finds remaining at a lower Sunday bin rate.", bar: 70, color: "bg-orange-500" },
+          { dayIndex: 1, badge: "Mid-High Tier", title: "Monday Drop", desc: "Adjusted daily based on remaining stock and item quality.", bar: 50, color: "bg-amber-500" },
+          { dayIndex: 2, badge: "Sweet Spot", title: "Tuesday Drop", desc: "Great balance of solid selection and lowered bin pricing.", bar: 40, color: "bg-amber-400" },
+          { dayIndex: 3, badge: "Value Tier", title: "Wednesday Drop", desc: "Prices keep stepping down as we clear room for the weekend.", bar: 30, color: "bg-lime-500" },
+          { dayIndex: 4, badge: "Deep Discount", title: "Thursday Drop", desc: "Late-week bargains before Friday's clearance tier.", bar: 22, color: "bg-emerald-500" },
+          { dayIndex: 5, badge: "Lowest Clearance", title: "Friday Clearance", desc: "Cheapest day of the week—as low as $1 (e.g., $1–$5 depending on inventory).", bar: 15, color: "bg-emerald-600" }
         ]
       },
       fr: {
@@ -555,20 +581,24 @@
         nav_finds: "En magasin",
         nav_visit: "Heures et adresse",
         nav_cta: "Nous visiter",
-        hero_title: 'Une chasse au trésor <span class="text-[#E82428] dark:text-red-400">à chaque visite.</span>',
+        hero_title: 'Une chasse au trésor <span class="hero-gradient-text">à chaque visite.</span>',
+        status_open_now: "Ouvert actuellement",
+        status_closed: "Fermé actuellement",
+        status_opens_at: "Ouvert à",
+        status_closes_at: "Ferme à",
         hero_subtitle: "Liquidation, surplus de grands détaillants et boîtes ouvertes au centre-ville de Sherbrooke. Nouveaux arrivages chaque samedi et baisse des prix toute la semaine—aussi bas que 1 $ le vendredi selon l’inventaire.",
         hero_cta_primary: "Visitez-nous — 103 Wellington N.",
         hero_cta_secondary: "Voir le cycle des prix",
         sourcing_label: "Surplus et retours provenant de grands détaillants dont",
         sourcing_more: "et plus",
         photo_badge: "103 Wellington N. • Sherbrooke",
-        photo_caption: "Nouvelles palettes déballées chaque samedi matin",
+        photo_caption: "Nouvel inventaire chaque samedi matin",
         card_kicker: "Tendance hebdomadaire",
         card_title: "Arrivage du samedi → Liquidation du vendredi",
         chart_sat: "Sam : Nouvel arrivage (~autour de 25 $)",
         chart_fri: "Ven : Aussi bas que 1 $ (1 $–5 $)",
-        dynamic_note: "<strong>Prix ajustés chaque jour selon l'inventaire :</strong> Nous fixons le tarif des bacs chaque matin selon le stock restant et la qualité—plus élevé le samedi avec les nouveautés, et au plus bas le vendredi (aussi bas que 1 $, ex. 1 $ à 5 $).",
-        social_prompt: "Suivez-nous :",
+        dynamic_note: "<strong>Pourquoi les prix exacts de chaque jour ne sont-ils pas affichés ?</strong> Nous fixons le prix des bacs chaque jour selon l'inventaire en temps réel, la qualité des articles et la demande. Le prix des bacs est le plus élevé le samedi, avec les nouveaux arrivages; le vendredi, nous proposons nos prix de liquidation les plus bas !",
+        social_prompt: "Suivez-nous pour les prix du jour et les promotions :",
         how_kicker: "Comment ça marche",
         how_title: "Venez tôt pour le choix, ou tard pour les plus bas prix",
         how_desc: "Comme chaque arrivage est unique, nous ajustons le prix des bacs chaque matin selon l'inventaire—toujours au sommet le samedi et au plus bas le vendredi.",
@@ -584,7 +614,7 @@
         bento3_title: "Prix qui baissent chaque jour",
         bento3_desc: "Les prix des bacs sont ajustés chaque jour selon l'inventaire—au sommet le samedi avec les nouveautés et au plus bas le vendredi (aussi bas que 1 $, ex. 1 $ à 5 $).",
         bento4_title: "Surplus de grands détaillants",
-        bento4_desc: "Nous proposons des surplus neufs, fins de série et retours clients provenant d'Amazon, Costco, Walmart et Canadian Tire—plus des gros articles à ~50 % de rabais.",
+        bento4_desc: "Amazon est notre principale source de surplus, fins de série et retours clients, complétée par des produits provenant de Costco, Walmart, Canadian Tire et d'autres détaillants. Nous proposons également certains articles haut de gamme à environ 50 % de rabais sur le prix de détail.",
         cat_kicker: "Inventaire en constante évolution",
         cat_title: "Ce que vous trouverez dans les bacs",
         cat_1: "Petits électros",
@@ -616,29 +646,28 @@
         shortDays: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
         cycleStages: [
           { dayIndex: 6, badge: "Choix maximal", title: "Nouvel arrivage", desc: "Nouveaux stocks en magasin. Tarif hebdomadaire le plus élevé (~autour de 25 $).", bar: 100, color: "bg-[#E82428]" },
-          { dayIndex: 0, badge: "Premier rabais", title: "Baisse du dimanche", desc: "Énormément de belles trouvailles restantes à tarif réduit.", bar: 82, color: "bg-orange-500" },
-          { dayIndex: 1, badge: "Tarif modéré", title: "Baisse du lundi", desc: "Ajusté chaque jour selon l'inventaire restant et la qualité.", bar: 68, color: "bg-amber-500" },
-          { dayIndex: 2, badge: "Bel équilibre", title: "Baisse du mardi", desc: "Excellent équilibre entre beau choix et prix réduits.", bar: 54, color: "bg-amber-400" },
-          { dayIndex: 3, badge: "Petits prix", title: "Baisse du mercredi", desc: "Les prix continuent de descendre avant la fin de semaine.", bar: 40, color: "bg-lime-500" },
-          { dayIndex: 4, badge: "Gros rabais", title: "Baisse du jeudi", desc: "Aubaines de fin de semaine avant la liquidation du vendredi.", bar: 26, color: "bg-emerald-500" },
-          { dayIndex: 5, badge: "Liquidation", title: "Liquidation du vendredi", desc: "Journée la moins chère — aussi bas que 1 $ (ex. 1 $ à 5 $ selon l’inventaire).", bar: 14, color: "bg-emerald-600" }
+          { dayIndex: 0, badge: "Premier rabais", title: "Baisse du dimanche", desc: "Énormément de belles trouvailles restantes à tarif réduit.", bar: 70, color: "bg-orange-500" },
+          { dayIndex: 1, badge: "Tarif modéré", title: "Baisse du lundi", desc: "Ajusté chaque jour selon l'inventaire restant et la qualité.", bar: 50, color: "bg-amber-500" },
+          { dayIndex: 2, badge: "Bel équilibre", title: "Baisse du mardi", desc: "Excellent équilibre entre beau choix et prix réduits.", bar: 40, color: "bg-amber-400" },
+          { dayIndex: 3, badge: "Petits prix", title: "Baisse du mercredi", desc: "Les prix continuent de descendre avant la fin de semaine.", bar: 30, color: "bg-lime-500" },
+          { dayIndex: 4, badge: "Gros rabais", title: "Baisse du jeudi", desc: "Aubaines de fin de semaine avant la liquidation du vendredi.", bar: 22, color: "bg-emerald-500" },
+          { dayIndex: 5, badge: "Liquidation", title: "Liquidation du vendredi", desc: "Journée la moins chère — aussi bas que 1 $ (ex. 1 $ à 5 $ selon l’inventaire).", bar: 15, color: "bg-emerald-600" }
         ]
       }
     };
 
     const schedule = {
-      0: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
-      1: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
-      2: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
-      3: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
-      4: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
-      5: { labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
-      6: { labelEn: "10:30 AM - 6:30 PM", labelFr: "10 h 30 - 18 h 30" }
+      0: { openMinute: 630, closeMinute: 1050, labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      1: { openMinute: 630, closeMinute: 1050, labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      2: { openMinute: 630, closeMinute: 1050, labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      3: { openMinute: 630, closeMinute: 1050, labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      4: { openMinute: 630, closeMinute: 1050, labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      5: { openMinute: 630, closeMinute: 1050, labelEn: "10:30 AM - 5:30 PM", labelFr: "10 h 30 - 17 h 30" },
+      6: { openMinute: 630, closeMinute: 1110, labelEn: "10:30 AM - 6:30 PM", labelFr: "10 h 30 - 18 h 30" }
     };
 
     let currentLang = 'en';
-    const todayName = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Toronto', weekday: 'long' }).format(new Date());
-    const todayIndex = translations.en.days.indexOf(todayName);
+    let todayIndex;
     const langToggle = document.getElementById('langToggle');
     const themeToggle = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('mcs-theme');
@@ -652,9 +681,52 @@
       themeToggle.setAttribute('aria-label', document.documentElement.classList.contains('dark') ? t.theme_to_light : t.theme_to_dark);
     }
 
+    function getStoreTime() {
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Toronto',
+        weekday: 'long',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23'
+      }).formatToParts(new Date());
+      const part = type => parts.find(item => item.type === type).value;
+      return {
+        dayIndex: translations.en.days.indexOf(part('weekday')),
+        minutes: Number(part('hour')) * 60 + Number(part('minute'))
+      };
+    }
+
+    function formatStoreTime(minutes) {
+      const hour = Math.floor(minutes / 60);
+      const minute = String(minutes % 60).padStart(2, '0');
+      if (currentLang === 'fr') return `${hour} h ${minute}`;
+      return `${hour % 12 || 12}:${minute} ${hour < 12 ? 'AM' : 'PM'}`;
+    }
+
+    function updateStoreStatus(t, storeTime) {
+      const daySchedule = schedule[storeTime.dayIndex];
+      const isOpen = storeTime.minutes >= daySchedule.openMinute && storeTime.minutes < daySchedule.closeMinute;
+      const status = document.getElementById('storeStatus');
+      const statusText = document.getElementById('storeStatusText');
+
+      status.dataset.open = String(isOpen);
+      if (isOpen) {
+        statusText.textContent = `${t.status_open_now} • ${t.status_closes_at} ${formatStoreTime(daySchedule.closeMinute)}`;
+        return;
+      }
+
+      const nextDayIndex = storeTime.minutes < daySchedule.openMinute
+        ? storeTime.dayIndex
+        : (storeTime.dayIndex + 1) % 7;
+      const nextOpening = schedule[nextDayIndex].openMinute;
+      statusText.textContent = `${t.status_closed} • ${t.status_opens_at} ${formatStoreTime(nextOpening)}`;
+    }
+
     function renderDynamicUI() {
       const t = translations[currentLang];
       const cycleStages = t.cycleStages;
+      const storeTime = getStoreTime();
+      todayIndex = storeTime.dayIndex;
 
       // 1. Update static text elements
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -664,6 +736,7 @@
       document.title = t.page_title;
       updateControlLabels(t);
       document.getElementById('mapFrame').title = t.map_title;
+      updateStoreStatus(t, storeTime);
 
       document.getElementById('heroDayBadge').textContent = `${t.today_label}: ${t.days[todayIndex]}`;
 
@@ -743,6 +816,7 @@
 
     // Initialize
     renderDynamicUI();
+    window.setInterval(renderDynamicUI, 60_000);
   </script>
 </body>
 </html>
